@@ -5,11 +5,13 @@
 	},
 	"env": {
 		"node": true,
-		"es6": true
+		"es6": true,
+		"browser": true
 	},
 	"rules": {
 		"linebreak-style": ["off"],
 		"indent": ["warn", "tab"],
-		"no-tabs": ["off"]
+		"no-tabs": ["off"],
+		"react/jsx-indent": ["warn", "tab"]
 	}
 }
