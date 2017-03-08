@@ -1,0 +1,15 @@
+{
+	"extends": "airbnb",
+	"ecmaFeatures": {
+		"jsx": true
+	},
+	"env": {
+		"node": true,
+		"es6": true
+	},
+	"rules": {
+		"linebreak-style": ["off"],
+		"indent": ["warn", "tab"],
+		"no-tabs": ["off"]
+	}
+}
