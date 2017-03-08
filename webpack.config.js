@@ -17,8 +17,12 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-			{ test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
+			{ test: /\.jsx?$/, exclude: /node_modules/, loader: ['babel'] },
+			{ test: /\.s?css$/, loader: 'style!css!sass?outputStyle=compressed' },
 		],
 	},
 	plugins: [HtmlWebpackPluginConfig],
+	sassLoader: {
+		includePaths: ['./node_modules'],
+	},
 };
