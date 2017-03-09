@@ -12,6 +12,7 @@
 		"linebreak-style": ["off"],
 		"indent": ["warn", "tab"],
 		"no-tabs": ["off"],
+		"comma-dangle": ["warn", "never"],
 		"react/jsx-indent": ["warn", "tab"]
 	}
 }
