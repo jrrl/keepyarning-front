@@ -1,9 +1,11 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
-const routes = (
+import Main from './Main';
+
+const routes = () => (
 	<Router history={hashHistory}>
-		<Route path="/">
+		<Route path="/" component={Main}>
 			<IndexRoute />
 		</Route>
 	</Router>

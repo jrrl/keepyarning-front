@@ -1,4 +1,22 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
-import routes from './routes';
+import { AppContainer } from 'react-hot-loader';
 
-ReactDOM.render(routes, document.getElementById('app'));
+import Routes from './routes';
+
+const render = (Component) => {
+	ReactDOM.render(
+		<AppContainer>
+			<Component />
+		</AppContainer>,
+		document.getElementById('app')
+	);
+};
+
+render(Routes);
+
+if (module.hot) {
+	module.hot.accept('./routes', () => {
+		render(Routes);
+	});
+}
