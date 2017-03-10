@@ -30,7 +30,9 @@ module.exports = {
 				test: /\.scss$/,
 				use: [
 				{ loader: 'style-loader' },
-				{ loader: 'css-loader' },
+				{
+					loader: 'css-loader'
+				},
 				{
 					loader: 'sass-loader',
 					options: { includePaths: ['./node_modules'], outputStyle: 'compressed' }
@@ -44,7 +46,10 @@ module.exports = {
 			`${__dirname}/app`,
 			'node_modules'
 		],
-		extensions: ['.js', '.jsx', '.css', '.scss', '.json']
+		extensions: ['.js', '.jsx', '.css', '.scss', '.json'],
+		alias: {
+			assets: `${__dirname}/assets`
+		}
 	},
 	plugins: [
 		HtmlWebpackPluginConfig,
