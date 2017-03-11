@@ -54,6 +54,6 @@ const Main = props => (
 
 Main.propTypes = {
 	children: React.PropTypes.arrayOf(React.PropTypes.object)
-}
+};
 
 export default Main;
