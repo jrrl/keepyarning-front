@@ -30,7 +30,7 @@ MenuItem.propTypes = {
 
 const MainMenu = () => (
 	<Header>
-		<Tiles flush fill>
+		<Tiles fill>
 			{buttons.map(button => <MenuItem key={button.label} {...button} />)}
 		</Tiles>
 	</Header>
@@ -53,7 +53,7 @@ const Main = props => (
 );
 
 Main.propTypes = {
-	children: React.PropTypes.arrayOf(React.PropTypes.object)
+	children: React.PropTypes.object
 };
 
 export default Main;
