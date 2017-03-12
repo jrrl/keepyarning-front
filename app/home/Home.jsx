@@ -5,17 +5,18 @@ import Image from 'grommet/components/Image';
 import Title from 'grommet/components/Title';
 import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
+import Section from 'grommet/components/Section';
 
 const Home = () => (
-	<Box full="horizontal" pad={{ between: 'large' }}>
-		<Box>
+	<Section full="horizontal" pad={{ between: 'large' }}>
+		<Section>
 			<Carousel persistentNav={false}>
 				<Image full src="https://placehold.it/1140x450" />
 				<Image full src="https://placehold.it/1140x450" />
 			</Carousel>
-		</Box>
+		</Section>
 
-		<Box direction="row" full="horizontal" pad={{ between: 'small' }}>
+		<Section direction="row" full="horizontal" pad={{ between: 'small' }}>
 			<Box pad={{ between: 'small' }}>
 				<Image alt="DECOR" src="./assets/home/DECOR.png" />
 				<Image alt="KIDS" src="./assets/home/KIDS.png" />
@@ -31,9 +32,9 @@ const Home = () => (
 				<Image alt="PERSONAL" src="./assets/home/PERSONAL.png" />
 				<Image alt="COLLECTION" src="./assets/home/COLLECTION.png" />
 			</Box>
-		</Box>
+		</Section>
 
-		<Box align="center">
+		<Section align="center">
 			<Box direction="row" pad={{ between: 'large' }}>
 				<Box size="xsmall"><Image src="./assets/home/ICONS for homepage-07.png" /></Box>
 				<Box alignSelf="center">
@@ -47,9 +48,9 @@ const Home = () => (
 				<br /><br />
 				Meet some of our crafters here.
 			</Paragraph>
-		</Box>
+		</Section>
 
-		<Box align="center" pad={{ between: 'small' }}>
+		<Section align="center" pad={{ between: 'small' }}>
 			<Heading tag="h3" strong uppercase>WHAT WE CAN DO FOR YOU</Heading>
 			<Box direction="row" pad={{ vertical: 'medium', horizontal: 'large', between: 'large' }}>
 				<Box align="center">
@@ -77,8 +78,8 @@ const Home = () => (
 					</Paragraph>
 				</Box>
 			</Box>
-		</Box>
-	</Box>
+		</Section>
+	</Section>
 );
 
 export default Home;

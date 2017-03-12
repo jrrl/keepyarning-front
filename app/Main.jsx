@@ -9,6 +9,7 @@ import Image from 'grommet/components/Image';
 import { Link } from 'react-router';
 
 import 'grommet/scss/vanilla/index.scss';
+import 'rc-slider/assets/index.css';
 
 const buttons = [
 	{ label: 'HOME', url: '/' },
