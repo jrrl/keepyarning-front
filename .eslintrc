@@ -13,6 +13,7 @@
 		"indent": ["warn", "tab"],
 		"no-tabs": ["off"],
 		"comma-dangle": ["warn", "never"],
-		"react/jsx-indent": ["warn", "tab"]
+		"react/jsx-indent": ["warn", "tab"],
+		"react/jsx-indent-props": ["warn", "tab"]
 	}
 }
