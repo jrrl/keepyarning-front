@@ -47,14 +47,14 @@ const Main = props => (
 		</Box>
 		<MainMenu />
 		{props.children}
-		<Box align="center" full="horizontal">
+		<Box align="center" full="horizontal" >
 			<img alt="Keep Yarning" src="assets/final_logo_1.png" style={{ width: '100px', height: 'auto' }} />
 		</Box>
 	</App>
 );
 
 Main.propTypes = {
-	children: React.PropTypes.object
+	children: React.PropTypes.node
 };
 
 export default Main;
