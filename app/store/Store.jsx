@@ -1,14 +1,14 @@
 import React from 'react';
-import Split from 'grommet/components/Split';
+import Section from 'grommet/components/Section';
 
 import ItemGrid from './ItemGrid';
 import Filter from './Filter';
 
 const Store = () => (
-	<Split flex="right" separator={false}>
+	<Section direction="row">
 		<Filter />
 		<ItemGrid />
-	</Split>
+	</Section>
 );
 
 export default Store;
