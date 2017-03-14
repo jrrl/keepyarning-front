@@ -6,6 +6,7 @@ import Home from './home/Home';
 import Store from './store/Store';
 import Item from './item/Item';
 import About from './about/About';
+import Contact from './contact/Contact';
 
 const routes = () => (
 	<Router history={hashHistory}>
@@ -14,6 +15,7 @@ const routes = () => (
 			<Route path="/store" component={Store} />
 			<Route path="/store/:itemCode" component={Item} />
 			<Route path="/about" component={About} />
+			<Route path="/contact" component={Contact} />
 		</Route>
 	</Router>
 );
