@@ -8,7 +8,7 @@ import Section from 'grommet/components/Section';
 
 const About = () => (
 	<Section pad={{ between: 'small' }}>
-		<Hero size="large" background={<Image src="https://placehold.it/1170x450" fit="cover" full />} />
+		<Hero background={<Image src="https://placehold.it/1152x576" fit="cover" />} />
 		<Box direction="row" pad={{ between: 'large' }}>
 			<Box size="large">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus.
