@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import Box from 'grommet/components/Box';
-import Card from 'grommet/components/Card';
 import Tiles from 'grommet/components/Tiles';
 import Tile from 'grommet/components/Tile';
+import Label from 'grommet/components/Label';
+import Image from 'grommet/components/Image';
 
 const SAMPLE_DATA = [
 	{ image: 'https://placehold.it/200x200', name: 'Sample 1', description: 'Lorem Ipsum' },
@@ -20,10 +22,15 @@ const SAMPLE_DATA = [
 
 const Item = props => (
 	<Tile>
-		<Card
-			size="small" thumbnail={props.image} label={props.name}
-			description={props.description} textSize="small"
-		/>
+		<Box size="small">
+			<Link to={`/store/${props.name}`}>
+				<Image src={props.image} />
+			</Link>
+			<Link to={`/store/${props.name}`}>
+				<Label>{props.name}</Label>
+			</Link>
+			{props.description}
+		</Box>
 	</Tile>
 );
 
@@ -35,7 +42,7 @@ Item.propTypes = {
 
 const ItemGrid = props => (
 	<Box>
-		<Tiles fill flush={false} size="small" selectable>
+		<Tiles fill flush={false} size="small">
 			{props.items.map(item => <Item key={item.name} {...item} />)}
 		</Tiles>
 	</Box>
