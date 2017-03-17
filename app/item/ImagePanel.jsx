@@ -4,6 +4,7 @@ import Image from 'grommet/components/Image';
 import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
 import Button from 'grommet/components/Button';
+import Anchor from 'grommet/components/Anchor';
 
 import CaretUpIcon from 'grommet/components/icons/base/CaretUp';
 import CaretDownIcon from 'grommet/components/icons/base/CaretDown';
@@ -13,18 +14,18 @@ const ImagePanel = ({ images, handleClick }) => (
 		<Box size="xsmall" pad="none" align="center">
 			<Button icon={<CaretUpIcon size="small" />} plain />
 			<List selectable onSelect={handleClick}>
-				{images.map((image, index) => (
-					<ListItem
-						pad={{ vertical: (index % 2 > 0 ? 'small' : 'none') }}
-						separator="none"
-					>
+				{images.map(image => (
+					<ListItem pad={{ vertical: 'small' }} separator="none">
 						<Image src={image.thumbnail} fit="contain" />
-					</ListItem>))}
+					</ListItem>
+				))}
 			</List>
 			<Button icon={<CaretDownIcon size="small" />} plain />
 		</Box>
 		<Box size="large" colorIndex="grey-2">
-			<Image src={images.length > 0 ? images[0].original : ''} fit="contain" />
+			<Anchor>
+				<Image src={images.length > 0 ? images[0].original : ''} fit="contain" />
+			</Anchor>
 		</Box>
 	</Box>
 );

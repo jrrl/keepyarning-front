@@ -26,10 +26,10 @@ const ITEM_PLACEHOLDER = {
 			original: 'https://placehold.it/570x570',
 			thumbnail: 'https://placehold.it/96x96',
 		},
-		{
-			original: 'https://placehold.it/570x570',
-			thumbnail: 'https://placehold.it/96x96',
-		},
+		// {
+		// 	original: 'https://placehold.it/570x570',
+		// 	thumbnail: 'https://placehold.it/96x96',
+		// },
 	]
 };
 
