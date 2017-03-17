@@ -7,16 +7,17 @@ import Button from 'grommet/components/Button';
 import List from 'grommet/components/List';
 import ListItem from 'grommet/components/ListItem';
 import CartIcon from 'grommet/components/icons/base/Cart';
+import Heading from 'grommet/components/Heading';
 
-const DetailsPanel = ({ name, price, description, colors, materials, handleAddToCart }) => (
+const DetailsPanel = ({ name, price, description, colors, materials, onAddToCart }) => (
 	<Box pad={{ between: 'medium' }} size="medium" >
 		<Box>
 			<Title>{name}</Title>
-			<Value value={price} units="Php" align="start" />
+			<Value value={price} icon={<Heading tag="h2" margin="none" strong>Php </Heading>} align="start" />
 			<Paragraph>{description}</Paragraph>
 		</Box>
 		<Box>
-			<Button primary icon={<CartIcon />} label="Add to Cart" onClick={handleAddToCart} />
+			<Button primary icon={<CartIcon />} label="Add to Cart" onClick={onAddToCart} />
 		</Box>
 		<Box>
 			<Title>Product Details</Title>
@@ -44,11 +45,7 @@ DetailsPanel.propTypes = {
 	description: PropTypes.string.isRequired,
 	colors: PropTypes.arrayOf(PropTypes.string).isRequired,
 	materials: PropTypes.arrayOf(PropTypes.string).isRequired,
-	handleAddToCart: PropTypes.func
-};
-
-DetailsPanel.defaultProps = {
-	handleAddToCart: null
+	onAddToCart: PropTypes.func.isRequired
 };
 
 export default DetailsPanel;

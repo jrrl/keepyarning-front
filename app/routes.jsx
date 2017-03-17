@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Main from './Main';
 import Home from './home/Home';
 import Store from './store/Store';
-import Item from './item/Item';
+import Item from './item/ItemContainer';
 import About from './about/About';
 import Contact from './contact/Contact';
 
