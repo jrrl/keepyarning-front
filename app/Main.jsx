@@ -6,6 +6,7 @@ import Tiles from 'grommet/components/Tiles';
 import Tile from 'grommet/components/Tile';
 import Box from 'grommet/components/Box';
 import Image from 'grommet/components/Image';
+import Columns from 'grommet/components/Columns';
 import { Link } from 'react-router';
 
 import 'grommet/scss/vanilla/index.scss';
@@ -49,6 +50,20 @@ const Main = props => (
 		{props.children}
 		<Box align="center" full="horizontal" >
 			<img alt="Keep Yarning" src="assets/final_logo_1.png" style={{ width: '100px', height: 'auto' }} />
+			<Columns justify="center" maxCount={2}>
+				<Box align="center" alignContent="center">
+					<span>info@keepyarning.com</span>
+					<span>+63.900.000.000</span>
+					<span>+63.900.000.000</span>
+				</Box>
+				<Box align="center">
+					<span>Quezon City</span>
+					<span>Philippines</span>
+				</Box>
+			</Columns>
+			<Box align="center" alignContent="center">
+				<span><em>Lovingly coded, crafted, and formed in the Philippines, Copyright 2016</em></span>
+			</Box>
 		</Box>
 	</App>
 );
