@@ -6,6 +6,10 @@ import Heading from 'grommet/components/Heading';
 import Image from 'grommet/components/Image';
 import Section from 'grommet/components/Section';
 
+const paragraphStyle = {
+	maxWidth: 'none'
+};
+
 const About = () => (
 	<Section pad={{ between: 'small' }}>
 		<Hero background={<Image src="https://placehold.it/1152x576" fit="cover" />} />
@@ -16,7 +20,7 @@ const About = () => (
 			</Box>
 			<Box full="horizontal">
 				<Heading>Your Partners</Heading>
-				<Paragraph style={{ 'max-width': 'none' }}>
+				<Paragraph style={paragraphStyle}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac tamen, ne cui
 					loco non videatur esse responsum, pauca etiam nunc dicam ad reliquam
 					orationem tuam. Dicet pro me ipsa virtus nec dubitabit isti vestro beato M.
@@ -35,7 +39,7 @@ const About = () => (
 		</Box>
 		<Box direction="row" pad={{ between: 'medium', vertical: 'large' }}>
 			<Box colorIndex="newtral-4-a">
-				<Image src="https://placehold.it/450x700" fit="cover" full />
+				<Image src="https://placehold.it/450x700" fit="cover" />
 			</Box>
 			<Box>
 				<Heading>Your Crafters</Heading>

@@ -41,15 +41,15 @@ const MainMenu = () => (
 const Main = props => (
 	<App>
 		<Box align="center" full="horizontal">
-			<img alt="Keep Yarning" src="assets/final_logo_1.png" style={{ width: '140px', height: 'auto' }} />
+			<Image alt="Keep Yarning" src="assets/final_logo_1.png" style={{ width: '140px', height: 'auto' }} />
 		</Box>
 		<Box align="center" full="horizontal">
 			<em>Cultivating spaces for Yearners</em>
 		</Box>
 		<MainMenu />
 		{props.children}
-		<Box align="center" full="horizontal" >
-			<img alt="Keep Yarning" src="assets/final_logo_1.png" style={{ width: '100px', height: 'auto' }} />
+		<Box align="center" full="horizontal" pad={{ between: 'small' }}>
+			<Image alt="Keep Yarning" src="assets/final_logo_1.png" style={{ width: '100px', height: 'auto' }} />
 			<Columns justify="center" maxCount={2}>
 				<Box align="center" alignContent="center">
 					<span>info@keepyarning.com</span>
