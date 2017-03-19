@@ -6,7 +6,7 @@ import Home from './home/Home';
 import Store from './store/Store';
 import Item from './item/ItemContainer';
 import About from './about/About';
-import Contact from './contact/Contact';
+import Contact from './contact/ContactContainer';
 
 const routes = () => (
 	<Router history={hashHistory}>
