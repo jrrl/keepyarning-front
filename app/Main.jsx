@@ -7,6 +7,7 @@ import Tile from 'grommet/components/Tile';
 import Box from 'grommet/components/Box';
 import Image from 'grommet/components/Image';
 import Columns from 'grommet/components/Columns';
+import Notification from 'grommet/components/Notification';
 import { Link } from 'react-router';
 
 import 'grommet/scss/vanilla/index.scss';
@@ -40,6 +41,7 @@ const MainMenu = () => (
 
 const Main = props => (
 	<App>
+		<Notification message="Site is currently under construction" status="warning" />
 		<Box align="center" full="horizontal">
 			<Image alt="Keep Yarning" src="assets/final_logo_1.png" style={{ width: '140px', height: 'auto' }} />
 		</Box>
