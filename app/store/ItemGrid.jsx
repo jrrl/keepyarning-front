@@ -56,10 +56,10 @@ Item.propTypes = {
 
 const ItemGrid = props => (
 	<Box flex>
-		<Box direction="row" justify="between">
-			<Sort options={SORT_OPTIONS} onChange={obj => console.log(obj)} />
-			<Select options={DISPLAY_OPTIONS} placeHolder="Display Count" />
-		</Box>
+		{/*<Box direction="row" justify="between">*/}
+			{/*<Sort options={SORT_OPTIONS} onChange={obj => console.log(obj)} />*/}
+			{/*<Select options={DISPLAY_OPTIONS} placeHolder="Display Count" />*/}
+		{/*</Box>*/}
 		<Columns size="small" justify="between">
 			{props.items.map(item => <Item key={item.code} {...item} />)}
 		</Columns>
