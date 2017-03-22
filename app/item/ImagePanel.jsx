@@ -9,22 +9,24 @@ import Anchor from 'grommet/components/Anchor';
 import CaretUpIcon from 'grommet/components/icons/base/CaretUp';
 import CaretDownIcon from 'grommet/components/icons/base/CaretDown';
 
-const ImagePanel = ({ images, handleClick }) => (
+const ImagePanel = ({ images, onImageSelect, currentImage, onPageUp, onPageDown }) => (
 	<Box pad={{ between: 'small' }} full={false} direction="row">
-		<Box size="xsmall" pad="none" align="center">
-			<Button icon={<CaretUpIcon size="small" />} plain />
-			<List selectable onSelect={handleClick}>
+		<Box size="xsmall" pad="none" align="center" alignSelf="stretch">
+			<Button icon={<CaretUpIcon size="small" />} plain onClick={onPageUp} />
+			<Box flex basis="full">
+			<List selectable onSelect={onImageSelect}>
 				{images.map(image => (
 					<ListItem pad={{ vertical: 'small' }} separator="none">
 						<Image src={image.thumbnail} fit="contain" />
 					</ListItem>
 				))}
 			</List>
-			<Button icon={<CaretDownIcon size="small" />} plain />
+			</Box>
+			<Button icon={<CaretDownIcon size="small" />} plain onClick={onPageDown} />
 		</Box>
 		<Box size="large" colorIndex="grey-2">
 			<Anchor>
-				<Image src={images.length > 0 ? images[0].original : ''} fit="contain" />
+				<Image src={currentImage} fit="contain" />
 			</Anchor>
 		</Box>
 	</Box>
@@ -32,7 +34,10 @@ const ImagePanel = ({ images, handleClick }) => (
 
 ImagePanel.propTypes = {
 	images: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
-	handleClick: PropTypes.func.isRequired
+	currentImage: PropTypes.string.isRequired,
+	onImageSelect: PropTypes.func.isRequired,
+	onPageUp: PropTypes.func.isRequired,
+	onPageDown: PropTypes.func.isRequired
 };
 
 export default ImagePanel;

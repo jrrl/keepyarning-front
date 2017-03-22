@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Section from 'grommet/components/Section';
 
 import DetailsPanel from './DetailsPanel';
-import ImagePanel from './ImagePanel';
+import ImagePanel from './ImagePanelContainer';
 
 const Item = ({ images, name, price, description, colors, materials, onAddToCart }) => (
 	<Section direction="row" pad={{ between: 'medium' }}>
