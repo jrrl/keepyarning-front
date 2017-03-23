@@ -13,22 +13,32 @@ const ITEM_PLACEHOLDER = {
 		{
 			original: 'https://placehold.it/570x570',
 			thumbnail: 'https://placehold.it/96x96',
-		},
-		{
-			original: 'https://placehold.it/580x580',
-			thumbnail: 'https://placehold.it/100x100',
+			zoom: 'https://placehold.it/1000x1000'
 		},
 		{
 			original: 'https://placehold.it/570x570',
 			thumbnail: 'https://placehold.it/96x96',
+			zoom: 'https://placehold.it/1000x1000'
 		},
 		{
 			original: 'https://placehold.it/570x570',
 			thumbnail: 'https://placehold.it/96x96',
+			zoom: 'https://placehold.it/1000x1000'
 		},
 		{
 			original: 'https://placehold.it/570x570',
 			thumbnail: 'https://placehold.it/96x96',
+			zoom: 'https://placehold.it/1000x1000'
+		},
+		{
+			original: 'https://placehold.it/570x570',
+			thumbnail: 'https://placehold.it/96x96',
+			zoom: 'https://placehold.it/1000x1000'
+		},
+		{
+			original: 'https://placehold.it/570x570',
+			thumbnail: 'https://placehold.it/96x96',
+			zoom: 'https://placehold.it/1000x1000'
 		},
 	]
 };

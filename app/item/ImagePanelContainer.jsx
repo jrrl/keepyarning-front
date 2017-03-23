@@ -4,10 +4,8 @@ import autobind from 'react-autobind';
 import ImagePanel from './ImagePanel';
 
 const movePage = value => function (state) {
-	let page = (state.currentPage + value) % state.pages.length;
-	page = page < 0 ? state.pages.length - 1 : page;
 	return {
-		currentPage: page
+		currentPage: (state.currentPage + state.pages.length + value) % state.pages.length
 	};
 };
 
@@ -15,6 +13,10 @@ const selectImage = imageIndex => function (state) {
 	return {
 		selectedImage: state.pages[state.currentPage][imageIndex].original
 	};
+};
+
+const toggleLightbox = open => function () {
+	return { isZoomed: open };
 };
 
 class ImagePanelContainer extends Component {
@@ -28,16 +30,21 @@ class ImagePanelContainer extends Component {
 		}
 
 		this.state = {
-			selectedImage: props.images[0].original,
+			selectedImage: props.images[0],
 			pages,
-			currentPage: 0
+			currentPage: 0,
+			isZoomed: false
 		};
 
 		autobind(this);
 	}
 
-	handleZoomImage() {
-		//
+	handleOpenLightbox() {
+		this.setState(toggleLightbox(true));
+	}
+
+	handleCloseLightbox() {
+		this.setState(toggleLightbox(false));
 	}
 
 	handlePageUp() {
@@ -58,8 +65,11 @@ class ImagePanelContainer extends Component {
 				images={this.state.pages[this.state.currentPage]}
 				currentImage={this.state.selectedImage}
 				onPageDown={this.handlePageDown}
-			    onPageUp={this.handlePageUp}
-			    onImageSelect={this.handleImageSelection}
+				onPageUp={this.handlePageUp}
+				onImageSelect={this.handleImageSelection}
+			    isZoomed={this.state.isZoomed}
+			    onLightboxClose={this.handleCloseLightbox}
+			    onZoom={this.handleOpenLightbox}
 			/>
 		);
 	}

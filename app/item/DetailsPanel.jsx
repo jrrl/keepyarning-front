@@ -12,8 +12,12 @@ import Heading from 'grommet/components/Heading';
 const DetailsPanel = ({ name, price, description, colors, materials, onAddToCart }) => (
 	<Box pad={{ between: 'medium' }} size="medium" >
 		<Box>
-			<Title>{name}</Title>
-			<Value value={price} icon={<Heading tag="h2" margin="none" strong>Php </Heading>} align="start" />
+			<Heading tag="h2">{name}</Heading>
+			<Value
+				value={price}
+				icon={<Heading tag="h2" margin="none" strong>Php </Heading>}
+				align="start"
+			/>
 			<Paragraph>{description}</Paragraph>
 		</Box>
 		<Box>
