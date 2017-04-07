@@ -3,21 +3,19 @@ import autobind from 'react-autobind';
 
 import ImagePanel from './ImagePanel';
 
-const movePage = value => function (state) {
+const movePage = value => (state) => {
 	return {
 		currentPage: (state.currentPage + state.pages.length + value) % state.pages.length
 	};
 };
 
-const selectImage = imageIndex => function (state) {
+const selectImage = imageIndex => (state) => {
 	return {
 		selectedImage: state.pages[state.currentPage][imageIndex]
 	};
 };
 
-const toggleLightbox = open => function () {
-	return { isZoomed: open };
-};
+const toggleLightbox = open => () => ({ isZoomed: open });
 
 class ImagePanelContainer extends Component {
 	constructor(props) {
@@ -67,9 +65,9 @@ class ImagePanelContainer extends Component {
 				onPageDown={this.handlePageDown}
 				onPageUp={this.handlePageUp}
 				onImageSelect={this.handleImageSelection}
-			    isZoomed={this.state.isZoomed}
-			    onLightboxClose={this.handleCloseLightbox}
-			    onZoom={this.handleOpenLightbox}
+				isZoomed={this.state.isZoomed}
+				onLightboxClose={this.handleCloseLightbox}
+				onZoom={this.handleOpenLightbox}
 			/>
 		);
 	}
