@@ -8,24 +8,6 @@ import Select from 'grommet/components/Select';
 import Sort from 'grommet-addons/components/Sort';
 import FormField from 'grommet/components/FormField';
 
-const SAMPLE_DATA = [
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod1' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod2' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod3' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod4' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod5' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod6' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod7' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod8' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod9' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod0' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod11' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod12' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod13' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod14' },
-	{ image: 'https://placehold.it/200x200', name: 'Sample', description: 'Lorem Ipsum', price: 100, code: 'prod15' }
-];
-
 const SORT_OPTIONS = [
 	{ label: 'Date Added', value: 'dateAdded' },
 	{ label: 'Price', value: 'price' }
@@ -33,16 +15,16 @@ const SORT_OPTIONS = [
 
 const DISPLAY_OPTIONS = ['20', '40', '60', '80', '100'];
 
-const Item = props => (
+const Item = ({ code, image, name, price, description }) => (
 	<Box size="small" pad="small">
-		<Link to={`/store/${props.code}`}>
-			<Image src={props.image} />
+		<Link to={`/store/${code}`}>
+			<Image src={image} />
 		</Link>
-		<Link to={`/store/${props.code}`}>
-			<Label>{props.name}</Label>
+		<Link to={`/store/${code}`}>
+			<Label>{name}</Label>
 		</Link>
-		{`Php ${props.price}`}<br />
-		{props.description}
+		{`Php ${price}`}<br />
+		{description}
 	</Box>
 );
 
@@ -54,24 +36,28 @@ Item.propTypes = {
 	code: PropTypes.string.isRequired
 };
 
-const ItemGrid = props => (
+const ItemGrid = ({ items, onSort, onChangeDisplay, direction }) => (
 	<Box flex>
-		{/*<Box direction="row" justify="between">*/}
-			{/*<Sort options={SORT_OPTIONS} onChange={obj => console.log(obj)} />*/}
-			{/*<Select options={DISPLAY_OPTIONS} placeHolder="Display Count" />*/}
-		{/*</Box>*/}
+		<Box direction="row" justify="between">
+			<Sort options={SORT_OPTIONS} onChange={onSort} direction={direction} />
+			<Select options={DISPLAY_OPTIONS} placeHolder="Display Count" onChange={onChangeDisplay} />
+		</Box>
 		<Columns size="small" justify="between">
-			{props.items.map(item => <Item key={item.code} {...item} />)}
+			{items.map(item => <Item key={item.code} {...item} />)}
 		</Columns>
 	</Box>
 );
 
 ItemGrid.propTypes = {
-	items: PropTypes.arrayOf(PropTypes.object)
+	items: PropTypes.arrayOf(PropTypes.object).isRequired,
+	onSort: PropTypes.func,
+	onChangeDisplay: PropTypes.func,
+	direction: PropTypes.string.isRequired
 };
 
 ItemGrid.defaultProps = {
-	items: SAMPLE_DATA
+	onSort: obj => console.log(obj),
+	onChangeDisplay: obj => console.log(obj)
 };
 
 export default ItemGrid;
